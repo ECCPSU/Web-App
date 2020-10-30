@@ -15,7 +15,7 @@
       background-color: white;
       border-radius: 10px;
       padding: 20px;
-      height: 350px;
+      height: 400px;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -73,6 +73,10 @@
       font-size: 18px;
       margin-top: 20px;
     }
+    a {
+      line-height: 1.2em;
+      margin-top: 15px;
+    }
   </style>
   <body>
     <div id='container'>
@@ -84,7 +88,8 @@
           <input class='info' type='password' name='password'><br>
           <input type='submit' value='Log in'>
         </form>
-        <h2 id='return'>{{return_info}}</h2>
+        <h2 id='return'>{{return_info}}</h2><br>
+        <a href="{{url_for('new_account')}}">Don't have an account?</a>
       </div>
     </div>
   </body>

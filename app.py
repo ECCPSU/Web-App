@@ -27,6 +27,10 @@ def login_form():
     else:
         return render_template('login.html')
 
+@app.route('/newaccount')
+def new_account():
+	return render_template('new_account.html')
+
 @app.route('/welcome/')
 def main(name=None):
 	return render_template('index.html', name=name)
