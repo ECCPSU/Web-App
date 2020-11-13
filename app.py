@@ -27,7 +27,7 @@ def login_form():
     else:
         return render_template('login.html')
 
-@app.route('/newaccount')
+@app.route('/newaccount/')
 def new_account():
 	return render_template('new_account.html')
 
@@ -35,5 +35,10 @@ def new_account():
 def main(name=None):
 	return render_template('index.html', name=name)
 
+@app.route('/team/')
+def view_team(team=None):
+    team = [{'name': 'John', 'email': 'john@gmail.com'}, {'name': 'Max', 'email': 'max@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}]
+    return render_template('team.html', team=team)
+
 if __name__ == '__main__':
-	app.run(debug=False)
+	app.run(debug=True)

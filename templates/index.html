@@ -1,11 +1,150 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>E-CC Casecomp</title>
 		<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/index.css')}}">
+
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				background-color: rgb(5,5,30);
+				font-family: 'arial';
+				color: #e0e0e0;
+			}
+			#navbar {
+				width: 100%;
+				height: 100px;
+				background-color: rgb(0,0,30);
+				border-bottom: 1px solid yellow;
+			}
+			.button {
+				height: 100%;
+			}
+			#container a {
+				text-decoration: none;
+				color: #e0e0e0;
+				width: 33%;
+				min-width: 80px;
+			}
+			#container {
+				width: 20%;
+				display: flex;
+				justify-content: space-between;
+				position: relative;
+				left: 50%;
+				height: 100%;
+				transform: translateX(-50%);
+			}
+			.button span {
+				font-size: 18px;
+				display: block;
+				text-align: center;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			#body-info-container {
+				display: grid;
+				grid-template-columns: auto auto;
+				margin: 100px auto 0 auto;
+				width: 80%;
+			}
+			.grid-item {
+				padding: 20px;
+				padding-left: 100px;
+				padding-right: 100px;
+			}
+			#title {
+				font-size: 75px;
+				font-weight: normal;
+			}
+			.caption {
+				font-size: 25px;
+				font-weight: normal;
+				line-height: 1.5em;
+			}
+			#countdown-title {
+				font-size: 50px;
+				font-weight: normal;
+			}
+			#counter-container {
+				display: block;
+				width: 35%;
+				margin-top: 50px;
+				padding: 20px;
+				padding-left: 100px;
+				padding-right: 100px;
+			}
+			#counter {
+				color: yellow;
+				font-weight: normal;
+				font-size: 60px;
+				background-color: rgb(5, 5, 40);
+				padding: 40px;
+				width: 100%;
+				text-align: center;
+				min-width: 545px;
+			}
+		</style>
 	</head>
 
 	<body>
-		<div>WELCOME, {{name}}</div>
+		<div id='navbar'>
+			<div id='container'>
+				<a href='*'>
+					<div class='button'>
+						<span>My Info</span>
+					</div>
+				</a>
+				<a href='/team/'>
+					<div class='button'>
+						<span>My Team</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div id='body-info-container'>
+			<div class='grid-item'>
+				<h1 id='title'>Welcome<span style='color: yellow;'>.</span></h1>
+				<p class='caption'>Hey there! If you haven't already, click above to see who's on your team. Don't worry if you don't see anyone or your team changes, the algorithm's just doing its thing!</p>
+			</div>
+			<div class='grid-item'>
+				
+			</div>
+			<div id='counter-container'>
+				<div id='counter'></div>
+			</div>
+		</div>
 	</body>
+	<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("counter").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 </html>

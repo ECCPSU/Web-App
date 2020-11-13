@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>E-CC Casecomp|My Team</title>
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				background-color: rgb(5,5,30);
+				font-family: 'arial';
+				color: #e0e0e0;
+			}
+			#team-table {
+				width: 50%;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<table id='team-table'>
+		{%for member in team%}
+			<tr class='member'>
+				<td>{{member['name']}}</td>
+				<td>{{member['email']}}</td>
+			</tr>
+		{%endfor%}
+		</table>
+	</body>
+</html>
