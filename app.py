@@ -37,7 +37,7 @@ def main(name=None):
 
 @app.route('/team/')
 def view_team(team=None):
-    team = [{'name': 'John', 'email': 'john@gmail.com'}, {'name': 'Max', 'email': 'max@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}]
+    team = [{'name': 'John', 'email': 'john@gmail.com'}, {'name': 'Max', 'email': 'max@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}]
     return render_template('team.html', team=team)
 
 if __name__ == '__main__':

@@ -10,20 +10,46 @@
 				font-family: 'arial';
 				color: #e0e0e0;
 			}
+			h1 {
+				text-align: center;
+				font-size: 75px;
+				font-weight: normal;
+				margin-bottom: 80px;
+			}
+			#team-container {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -60%);
+				width: 100%;
+			}
 			#team-table {
 				width: 50%;
 				margin: auto;
+				border: 1px solid yellow;
+			}
+			.member {
+				padding: 20px;
+				background-color: rgb(5,5,40);
+			}
+			td {
+				padding: 25px;
+				text-align: center;
+				font-size: 18px;
 			}
 		</style>
 	</head>
 	<body>
-		<table id='team-table'>
-		{%for member in team%}
-			<tr class='member'>
-				<td>{{member['name']}}</td>
-				<td>{{member['email']}}</td>
-			</tr>
-		{%endfor%}
-		</table>
+		<div id='team-container'>
+			<h1>Your Team</h1>
+			<table id='team-table'>
+			{%for member in team%}
+				<tr class='member'>
+					<td>{{member['name']}}</td>
+					<td>{{member['email']}}</td>
+				</tr>
+			{%endfor%}
+			</table>
+		</div>
 	</body>
 </html>
