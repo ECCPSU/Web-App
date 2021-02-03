@@ -1,6 +1,29 @@
 from flask import Flask, render_template, url_for, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+db = SQLAlchemy(app)
+
+
+class Users(db.Model):
+    __tablename__ = 'Users'
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), nullable=False)
+    username = db.Column(db.String(40), nullable=False)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    major = db.Column(db.String(50), nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+
+class Participants(db.Model):
+    __tablename__ = 'Participants'
+    id = db.Column(db.Integer, db.ForeignKey('Users.id'), primary_key=True)
+    is_partic = db.Column(db.Boolean, default=False)
+
 
 @app.route('/')
 def visit(info=None):
@@ -27,7 +50,7 @@ def login_form():
     else:
         return render_template('login.html')
 
-@app.route('/newaccount/')
+@app.route('/newaccount/', methods=['POST', 'GET'])
 def new_account():
 	return render_template('new_account.html')
 
