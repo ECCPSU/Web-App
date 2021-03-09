@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy.exc import SQLAlchemyError
 
+import teamtools
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
@@ -41,7 +43,6 @@ def visit(info=None):
 def login_form():
     username = request.form.get('username', False)
     password = request.form.get('password', False)
-    print(username, password)
 
     user = Users.query.filter_by(name=username).first()
 
@@ -86,7 +87,8 @@ def main(name=None):
 
 @app.route('/team/')
 def view_team(team=None):
-    team = [{'name': 'John', 'email': 'john@gmail.com'}, {'name': 'Max', 'email': 'max@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}, {'name': 'Julia', 'email': 'julia@gmail.com'}]
+    user_id = 1
+    team = teamtools.get_team(TeamConnection, Users, user_id)
     return render_template('team.html', team=team)
 
 
