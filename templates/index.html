@@ -132,7 +132,7 @@
 						<span>My Info</span>
 					</div>
 				</a>
-				<a href='/team/'>
+				<a href='/team/{{name}}'>
 					<div class='button'>
 						<span>My Team</span>
 					</div>
@@ -141,9 +141,9 @@
 		</div>
 		<div id='body-info-container'>
 			<div class='grid-item'>
-				<h1 id='title'>Welcome<span style='color: yellow;'>.</span></h1>
+				<h1 id='title'>Welcome, {{name}}<span style='color: yellow;'>.</span></h1>
 				<p class='caption'>Hey there! If you haven't already, click above to see who's on your team. Don't worry if you don't see anyone or your team changes, the algorithm's just doing its thing!</p>
-				<a href='*' style='width: 150px;'>
+				<a href="{{name}}" style='width: 150px;'>
 					<div class='large-button' style='width: 150px; margin-top: 70px;'>
 						<span>Participate</span>
 					</div>

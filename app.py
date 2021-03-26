@@ -9,8 +9,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 
-#Hello Sameep!
-
 
 #-------------------------------------------------------------------------
 class Users(db.Model):
@@ -81,17 +79,17 @@ def new_account():
 
 
 
-@app.route('/welcome/')
+@app.route('/welcome/<name>')
 def main(name=None):
 	return render_template('index.html', name=name)
 
 
 
-@app.route('/team/')
-def view_team(team=None):
-    user_id = 1
+@app.route('/team/<name>')
+def view_team(name=None):
+    user_id = Users.query.filter_by(name=name).first().id
     team = teamtools.get_team(TeamConnection, Users, user_id)
-    return render_template('team.html', team=team)
+    return render_template('team.html', name=name, team=team)
 
 
 #---------------------------------------------------------------------------
