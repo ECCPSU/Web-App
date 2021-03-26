@@ -1,15 +1,10 @@
 Due: Next Meeting
 
-Create a function (possibly in a different file) that will add two users to the TeamConnection DB.
-So the function can be something like "create_alliance(u1, u2)." Be mindful that when doing "foo(u1, u2)," that
-isn't necessarily the same as "foo(u2, u1)." If you want to make the function do both at the same time, it can be
-done but will take up double the space.
+Look at the "things left to implement" file on the google drive inside the tech folder.
 
-Modify the app file to be able to query the TeamConnection DB and return to the user his/her team.
-(look at how the data to the viewteam template is being sent in and see how you can get something like that from the DB)
-Feel free to change how the data is actually input to the template as well...
-	If you aren't deciding to do the two-in-one aspect, you will need to query the db so that it will handle 'u1, u2' AND 'u2, u1.'
-	In other words, you want to find a way to eliminate the overlap between permutations and just have combinations.
+Pick an area that you would like to work on/work on with someone else.
 
-To test if the new and revised viewteam page is working, add some teammates to the DB and see what it returns. For example,
-to make a team of u1=John, u2=Alex, and u3=Mary, do "foo(u1, u2)" then "foo(u1, u3)" then "foo(u2, u3)."
+Post your choice into the slack #technology chat.
+
+Do some work on your area and be ready to share what you've done at the next meeting (you
+dont necessarily have to finish it, but have meaningful progress).

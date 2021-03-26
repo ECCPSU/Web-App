@@ -24,6 +24,7 @@
 			}
 			.button {
 				height: 100%;
+				min-width: 125px;
 			}
 			#ecc-img {
 				position: absolute;
@@ -39,10 +40,11 @@
 				transition: 0.1s ease-out;
 			}
 			#container a:hover {
-				transform: translateY(-8px)
+				transform: translateY(-8px);
+				color: yellow;
 			}
 			#container {
-				width: 20%;
+				width: 30%;
 				display: flex;
 				justify-content: space-between;
 				position: relative;
@@ -72,11 +74,10 @@
 			.large-button {
 				height: 50px;
 				background-color: yellow;
-				transition: 0.5s;
+				transition: 0.3s;
 			}
 			.large-button:hover {
-				transform: scale(1.2);
-				background-color: orange;
+				transform: scale(1.1);
 			}
 			.large-button span {
 				color: rgb(5,5,30);
@@ -127,9 +128,14 @@
 		<div id='navbar'>
 			<img id='ecc-img' src=" {{ url_for('static', filename='img/ecc.png') }} ">
 			<div id='container'>
-				<a href='*'>
+				<a href='{{name}}'>
 					<div class='button'>
 						<span>My Info</span>
+					</div>
+				</a>
+				<a href='{{name}}'>
+					<div class='button'>
+						<span>Form a Team</span>
 					</div>
 				</a>
 				<a href='/team/{{name}}'>
@@ -158,7 +164,7 @@
 		</div>
 	</body>
 	<script>
-		var countDownDate = new Date("March 29, 2021 15:37:25").getTime();
+		var countDownDate = new Date("April 5, 2021 19:30:00").getTime();
 
 		var x = setInterval(function() {
 

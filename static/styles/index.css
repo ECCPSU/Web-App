@@ -16,6 +16,7 @@ body {
 			}
 			.button {
 				height: 100%;
+				min-width: 125px;
 			}
 			#ecc-img {
 				position: absolute;
