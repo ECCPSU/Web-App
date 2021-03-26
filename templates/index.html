@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<title>E-CC Casecomp</title>
-		<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/index.css')}}">
+		<link rel= "stylesheet" type= "text/css" href="{{url_for('static',filename='styles/index.css')}}">
 
-		<style>
-			body {
+	</head>
+	<style>
+		body {
 				padding: 0;
 				margin: 0;
 				background-color: rgb(5,5,30);
@@ -120,12 +121,11 @@
 				text-align: center;
 				min-width: 545px;
 			}
-		</style>
-	</head>
+	</style>
 
 	<body>
 		<div id='navbar'>
-			<img id='ecc-img' src='img/ecc.png'>
+			<img id='ecc-img' src=" {{ url_for('static', filename='img/ecc.png') }} ">
 			<div id='container'>
 				<a href='*'>
 					<div class='button'>
