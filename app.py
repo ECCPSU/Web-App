@@ -1,16 +1,14 @@
-from flask import Flask, render_template, url_for, request, redirect
+afrom flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetimeasd
 from sqlalchemy.exc import SQLAlchemyError
 
-import teamtools
+asdimport teamtools
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = dasdaas
 
-
-#-------------------------------------------------------------------------
+as-----------------------------asdasdasd---------------
 class Users(db.Model):
     __tablename__ = 'Users'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
