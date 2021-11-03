@@ -4,14 +4,14 @@ Web App for handling case competition registration
 # Environment setup
 
 Create environment
-  cd Web-App
-  python3 -m venv venv
+* cd Web-App
+* python3 -m venv venv
 
 Activate environment
-  venv/bin/activate
+* venv/bin/activate
 
 Install flask
-  pip install Flask
+* pip install Flask
 
 # Git Commands
 
