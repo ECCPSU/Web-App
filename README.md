@@ -13,6 +13,30 @@ Activate environment
 Install flask
 * pip install Flask
 
+# Project Plan
+The project is divided into three EPICS
+
+EPIC: Input data
+
+* Feature 001: Create a google sheets form
+
+* Feature 002: Import contact data to a SQL server
+
+EPIC: Algorithm
+
+* Feature 001: Distribute participants into teams in terms of major
+
+* Feature 002: Distribute participants into teams based on year standing
+
+* Feature 003: Distribution with two criteria: major and standing
+
+* Feature 004: Connect algorithm to SQL database
+
+EPIC: Deployment
+
+* Research about potential options to host the application.
+
+
 # Git Commands
 
 Push  a branch to github (send updates to github)
