@@ -19,18 +19,36 @@ The project is divided into three EPICS
 EPIC: Input data
 
 * Feature 001: Create a google sheets form
+As a User, I should be able to enter my basic contact details, academic information and team information.
 
-* Feature 002: Import contact data to a SQL server
+* Feature 002: Create a SQL server
+As a Developer, I need to be able to store the user data into a database for easier manipulation.
+
+* Feature 003: Import contact data to a database.
+As a Developer, details about any new entry through the forms should automatically populate the database.
+
+* Feature 004: Identify records as part of one team if mentioned in the Google forms.
+As a Developer, a unique ID is required to link already formed teams.
 
 EPIC: Algorithm
 
 * Feature 001: Distribute participants into teams in terms of major
+As a Developer, I need to form teams comprised on individual sign-ups.
 
-* Feature 002: Distribute participants into teams based on year standing
+* Feature 002: Distribute participants into teams with mixed team status in terms of major
+As a Developer, I need to accommodate if teams have already been formed with individual sign-ups.
 
-* Feature 003: Distribution with two criteria: major and standing
+* Feature 003: Distribute participants into teams based in terms of year standing
+As a Developer, I need to form teams comprised on individual sign-ups.
 
-* Feature 004: Connect algorithm to SQL database
+* Feature 004: Distribute participants into teams with mixed team status in terms of year standing
+As a Developer, I need to accommodate if teams have already been formed with individual sign-ups.
+
+* Feature 005: Distribution with two criteria: major and standing
+As a Developer, I need to form teams with mixed team and individual standings based on both major and year standing.
+
+* Feature 006: Connect algorithm to SQL database
+As a Developer, I need to read participant data from the database.
 
 EPIC: Deployment
 
